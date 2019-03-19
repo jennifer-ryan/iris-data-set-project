@@ -15,7 +15,10 @@ from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.naive_bayes import GaussianNB
 from sklearn.svm import SVC
 
-
+# Load dataset
+url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/iris.csv"
+names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
+dataset = pandas.read_csv(url, names=names)
 
 # univariate plots - to better understand each attribute
 # box and whisker plots
