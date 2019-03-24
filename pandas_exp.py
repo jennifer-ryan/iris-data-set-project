@@ -8,16 +8,27 @@ import pandas as pd
 iris = pd.read_csv('iris.csv', delimiter = ',')
 
 # prints first 5 entries
-print(iris.head())
+#print(iris.head())
 
 # prints last 5 entries
-print(iris.tail())
+#print(iris.tail())
 
 # prints 10 random entries
-print(iris.sample(10))
+#print(iris.sample(10))
 
 # prints select particular columns
-print (iris[['sepal_length', 'species']])
+#print (iris[['sepal_length', 'species']])
 
 # prints rows filtered by type. this could be useful when trying to separate species for analysis 
-print(iris[iris.species == 'setosa'])
+#print(iris[iris.species == 'setosa'])
+
+# prints means of a numerical columns 
+#print(iris.mean())
+
+# prints mean of a particular column. https://stackoverflow.com/a/31037360
+#print(iris["sepal_width"].mean())
+
+# splitting by species
+# setosa = iris['species'] == 'setosa'
+#print(setosa) # prints as boolean true/false
+
