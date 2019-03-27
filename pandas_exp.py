@@ -49,11 +49,23 @@ iris = pd.read_csv('iris.csv', delimiter = ',')
 # print(iris.sum())
 
 # minimum and maximum of each column
-print (iris.sepal_length.min())
-print (iris.sepal_length.max())
+#print (iris.sepal_length.min())
+#print (iris.sepal_length.max())
 
 # mean and median of each column
-print (iris.sepal_length.mean())
-print (iris.sepal_length.median())
+#print (iris.sepal_length.mean())
+#print (iris.sepal_length.median())
 
-# Grouping
+# Grouping and Aggregation
+# Returns Dataframe object (2 dimensional table with columns and rows)
+# mean below but can be used 
+#print (iris.groupby('species').mean()[[('sepal_length')]])
+# Returns series object (1 dimensional labelled array)
+#print (iris.groupby('species').mean().sepal_length)
+
+
+
+
+# https://ugoproto.github.io/ugo_py_doc/Pandas_DataFrame_Notes.pdf
+# Results: count, mean, standard deviation, min, max, lower percentile (25%), median (50%) and upper percentile (75%)
+print (iris.describe())
