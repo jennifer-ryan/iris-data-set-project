@@ -1,7 +1,7 @@
 # Machine Learning Project https://machinelearningmastery.com/machine-learning-in-python-step-by-step/
 # Graphs
 
-import pandas
+import pandas as pd
 from pandas.plotting import scatter_matrix
 import matplotlib.pyplot as plt
 from sklearn import model_selection
@@ -16,21 +16,28 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.svm import SVC
 
 # Load dataset
-url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/iris.csv"
-names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
-dataset = pandas.read_csv(url, names=names)
+iris = pd.read_csv('iris.csv', delimiter = ',')
 
 # univariate plots - to better understand each attribute
 # box and whisker plots
-dataset.plot(kind='box', subplots=True, layout=(2,2), sharex=False, sharey=False)
-plt.show()
+#iris.plot(kind='box', subplots=True, layout=(2,2), sharex=False, sharey=False)
+#plt.show()
 
 # histograms
-dataset.hist()
-plt.show()
+#iris.hist()
+#plt.show()
 
 # multivariate plots - to better understand the relationships between attributes.
 # scatter plot matrix
-scatter_matrix(dataset)
-plt.show()
+#scatter_matrix(iris)
+#plt.show()
 # Note the diagonal grouping of some pairs of attributes. This suggests a high correlation and a predictable relationship.
+
+# **SEPAL AND PETAL SCATTERPLOTS SHOW SETOSA SEPARATION**
+#https://github.com/venky14/Machine-Learning-with-Iris-Dataset/blob/master/Iris%20Species%20Dataset%20Visualization.ipynb
+# Nice scatterplot of sepal length/width. Saved as scatter.sepal
+import seaborn as sns
+sns.FacetGrid(iris, hue = 'species', height=5).map(plt.scatter, 'sepal_length', 'sepal_width').add_legend()
+# same below but with petals
+sns.FacetGrid(iris, hue = 'species', height=5).map(plt.scatter, 'petal_length', 'petal_width').add_legend()
+plt.show()
