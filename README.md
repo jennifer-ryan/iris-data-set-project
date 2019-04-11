@@ -34,6 +34,10 @@ Look at:
 * Machine learning such as neural networks - predictive nature of the data 
 
 
-# Averages
+## Averages
 Simply observing the averages of each measurement by species seems to demonstrate significant differences between the species. For instance, setosa has the smallest sepal length, petal length and petal width measurements and yet the largest sepal widths.
 None of the species individual averages are close to the overall average for all species.
+
+
+## Scatterplots 
+![Petal Measurements](scatter.petal.png)
