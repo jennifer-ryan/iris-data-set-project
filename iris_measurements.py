@@ -23,4 +23,14 @@ means = sp_mean.append(to_mean, ignore_index=True)
 # Inserting new column rather than trying to rename the index:
 # could not get to work until I added square brackets around the species names
 means.insert(0, 'species', ['setosa', 'versicolor', 'virginica', 'all_species'])
-print(means)
+#print(means)
+
+# Tried prettytable and plotly to display a table - not available. Will stick to matplotlib and seaborn for now
+
+
+# Same thing for medians. Any use?
+sp_median = iris.groupby('species').median()
+to_median = iris.median()
+medians = sp_median.append(to_median, ignore_index=True)
+medians.insert(0, 'species', ['setosa', 'versicolor', 'virginica', 'all_species'])
+print(medians)
