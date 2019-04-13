@@ -29,8 +29,17 @@ means.insert(0, 'species', ['setosa', 'versicolor', 'virginica', 'all_species'])
 
 
 # Same thing for medians. Any use?
-sp_median = iris.groupby('species').median()
-to_median = iris.median()
-medians = sp_median.append(to_median, ignore_index=True)
-medians.insert(0, 'species', ['setosa', 'versicolor', 'virginica', 'all_species'])
-print(medians)
+#sp_median = iris.groupby('species').median().
+#to_median = iris.median()
+#medians = sp_median.append(to_median, ignore_index=True)
+#medians.insert(0, 'species', ['setosa', 'versicolor', 'virginica', 'all_species'])
+#print(medians)
+
+# standard deviation
+stan = iris.groupby('species').std()
+#print(stan)
+
+
+# Correlations
+cor = iris.corr()
+print(cor)
