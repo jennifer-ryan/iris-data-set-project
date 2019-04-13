@@ -1,5 +1,9 @@
 # iris-data-set-project
 
+
+## The Dataset
+Slight discrepancies have been noted in some electronic versions of the dataset (Bezdek et al, 1999) with slight variations observed in some of the measurements when compared to the original dataset that was published in 1936.
+ 
 iris.csv taken from [here](https://gist.github.com/curran/a08a1080b88344b0c8a7#file-iris-csv-L1).
 
 Notes
@@ -38,6 +42,19 @@ Look at:
 Simply observing the averages of each measurement by species seems to demonstrate significant differences between the species. For instance, setosa has the smallest sepal length, petal length and petal width measurements and yet the largest sepal widths.
 None of the species individual averages are close to the overall average for all species.
 
+## Standard Deviation
+How close measurements are the to average - how wide is the bell curve?
+
 
 ## Scatterplots 
 ![Petal Measurements](scatter.petal.png)
+
+## Correlations
+Correlation figures demonstrate that petal length and petal width are both highly correlated with sepal length
+Petal length and width are very highly correlated
+However, sepal length and width have a small negative correlation.
+
+
+
+## References
+Bezdek, J. C., Keller, J. M., Krishnapuram, R., Kuncheva, L. I., & Pal, N. R.        (1999). *Correspondence: Will the Real Iris Data Please Stand Up?*. IEEE        Transactions on Fuzzy Systems, 7: 3, June 1999.
