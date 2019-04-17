@@ -18,9 +18,13 @@ See what is available in this article: https://link.springer.com/chapter/10.1007
 Why the iris dataset?
 - There are no missing values in the dataset.
 - It has a balanced class distribution with exactly 50 of each species measured.
-
+- Each of the four features (sepal and petal length and width) are measured in the same way (cm).
 
 It is often used as an example of machine learning because prediction is easy
+
+## Exploratory Data Analysis
+https://medium.com/@harimittapalli/exploratory-data-analysis-iris-dataset-9920ea439a3e
+Exploratory Data Analysis allows us to better understand the data through statistical and visual techniques in order to form hypotheses
 
 ## Averages
 Simply observing the averages of each measurement by species seems to demonstrate significant differences between the species. For instance, setosa has the smallest sepal length, petal length and petal width measurements and yet the largest sepal widths.
@@ -46,6 +50,10 @@ Versicolor and Virginica are not very distinguishable from one another in terms 
 
 ![Petal Measurements by Species](Images/scatter.petal.png)
 ![Sepal Measurements by Species](Images/scatter.sepal.png)
+
+
+The histograms and scatterplots shown in the pairplot, allow us to se at a glance how separable the setosa data is from the other two iris species across all measurements. 
+While iris versicolor and virginica are not as distinct from one another, the pairplots show that they are more separable by petal measurements than sepal measurements. 
 
 
 ## Correlations
