@@ -4,43 +4,33 @@ This repository contains an explanation and exploration of the famous Iris Datas
 ## About this Repository
 The repository is made up of the following:
 * This **README** file that contains a description of the Iris Dataset, exploratory data analysis using statistics and visualisation, and a basic illustration of how the dataset can be used in Machine Learning.
+* The **iris.csv** file which contains the completed dataset downloaded from [here](https://gist.github.com/curran/a08a1080b88344b0c8a7#file-iris-csv-L1).
 * Two **Jupyter Notebooks** created using *Python*: 
-    * **Exploratory Data Analysis** uses the *pandas* library for statistical investigations and *matplotlib* and *seaborn* for data visualisation.
+    * **Iris Dataset Exploratory Data Analysis** uses the *pandas* library for statistical investigations and *matplotlib* and *seaborn* for data visualisation.
     * **Machine Learning** that interprets the dataset as *numpy* arrays and builds a basic model using *sklearn*, specifically the *K-Nearest Neighbor* algorithm. 
-* **Images** folder that contains .png files of some of the data visualisation performed in the Exploratory Data Analysis notebook that are embedded to the README 
+* **Images** folder that contains .png files of some of the data visualisation performed in the Exploratory Data Analysis notebook that are embedded in the README 
 
-## Contents
-/1. The Dataset
-    1.1 
-/2. Exploratory Data Analysis
-/3. Machine Learning
-    3.? K-Nearest Neighbor
-
-## The Dataset
-The Iris Dataset examines certain features of three different species of iris flower: setosa, versicolor and virginica. These features are length and width measurements in centimetres of each iris' petals and sepals.
+## 1. The Dataset
+The Iris Dataset consists of 50 samples each of three different species of iris flower: *setosa*, *versicolor* and *virginica*. It contains four different centimetre measurements for each sample - sepal length and width and petal length and width - making it a multivariate dataset.
 
 ![Iris Species](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Machine+Learning+R/iris-machinelearning.png)
 
-The data was collected by Edgar Anderson and popularised when it was used by biologist and statistician Ronald Fisher in his 1936 paper *The Use of Multiple Measurements in Taxonomic Problems* to demonstrate how statistics can be used for classification. He argues that in this dataset the species of iris could be determined based solely on sepal and petal measurements - a method that would become known as linear discriminant analysis.
+The data was collected by botanist Edgar Anderson in the Gaspé Peninsula and popularised when it was used by biologist and statistician Ronald Fisher in his 1936 paper *The Use of Multiple Measurements in Taxonomic Problems* to demonstrate how statistics can be used for classification. He argues that, based on the information in this dataset, iris group membership could be determined by sepal and petal attributes alone - a method that would become known as linear discriminant analysis. 
 
-
-https://www.youtube.com/watch?v=hd1W4CyPX58&t=187s
-It is a supervised learning problem as we are presented with both input (iris measurements) and output (iris species) pairs. The information from these pairings should ideally allow us to accurately predict a species of iris when presented with new data inputs. The iris dataset has become popular in machine learning teaching due to the strong link between species and measurements, particularly in the case of iris setosa.
+It is a 
 
 Slight discrepancies have been noted in some electronic versions of the dataset (Bezdek et al, 1999) with slight variations observed in some of the measurements when compared to the original dataset that was published in 1936.
  
-iris.csv taken from [here](https://gist.github.com/curran/a08a1080b88344b0c8a7#file-iris-csv-L1).
 
 See what is available in this article: https://link.springer.com/chapter/10.1007/978-3-7908-1883-3_19
 
 Why the iris dataset?
-- There are no missing values in the dataset.
-- It has a balanced class distribution with exactly 50 of each species measured.
-- Each of the four features (sepal and petal length and width) are measured in the same way (cm).
+* It is a complete, balanced dataset in that there are no null values and each class is equally represented. 
+* Each of the four features (sepal and petal length and width) are measured in the same units (centimetres).
 
 It is often used as an example of machine learning because prediction is easy
 
-## Exploratory Data Analysis
+## 2. Exploratory Data Analysis
 https://medium.com/@harimittapalli/exploratory-data-analysis-iris-dataset-9920ea439a3e
 Exploratory Data Analysis allows us to better understand the data through statistical and visual techniques in order to form hypotheses
 
@@ -82,21 +72,25 @@ While iris versicolor and virginica are not as distinct from one another, the pa
 ## Correlations
 Correlation figures demonstrate that petal length and petal width are both highly correlated with sepal length
 Petal length and width are very highly correlated
-However, sepal length and width have a small negative correlation, suggesting that sepal length and width can be vastly different.
+However, sepal width is not highly correlated with any other measurement. The smallest correlation is between sepal length and width, suggesting that they can be vastly different. When we were previously looking at averages, we saw that the species setosa has the smallest average measurements in petal length and width and in sepal length and yet had the largest average sepal width. 
+?Look at particular correlations between species to see if setosa is affecting these figures. 
 
+## 3. Machine Learning
+A machine learning program learns from information provided by previous examples. In the case of the Iris Dataset, this would be supervised learning as we a
+The patterns identified in the iris dataset can be used to create a predictive algorithm to determine a species of iris flower based on sepal and petal measurements.
 
-## Machine Learning
-A machine learning program learns from previous examples - supervised learning.
-The patterns identified in the iris dataset can be used to create a predictive algorithm to determine the species of iris flower based on sepal and petal measurements.
+https://www.youtube.com/watch?v=hd1W4CyPX58&t=187s
+It is a supervised learning problem as we are presented with both input (iris measurements) and output (iris species) pairs. The information from these pairings should ideally allow us to accurately predict a species of iris when presented with new data inputs. The iris dataset has become popular in machine learning teaching due to the strong link between species and measurements, particularly in the case of iris setosa.
 
-There are several algorithms available in the sklearn library that can be used to build a machine learning model for the ID including:
+There are several algorithms available in the sklearn Python library that can be used to build a machine learning model for the Iris Dataset including:
 - Logistic Regression
 - Linear Discriminant Analysis
 - K-Nearest Neighbors
 - Classification and Regression Trees 
 - Gaussian Naive Baynes
 - Support Vector Models
-These models are tested with the iris dataset here: https://machinelearningmastery.com/machine-learning-in-python-step-by-step/
+
+These models have been used and tested for accuracy with the iris dataset several times  https://machinelearningmastery.com/machine-learning-in-python-step-by-step/
 here: https://www.kaggle.com/kamrankausar/iris-dataset-ml-and-deep-learning-from-scratch
 and here: https://medium.com/codebagng/basic-analysis-of-the-iris-data-set-using-python-2995618a6342
 
@@ -166,11 +160,7 @@ Swain, M., Dash, S. K., Dash, S., & Mohapatra, A. (2012) *An Approach for Iris  
 
 
 # Notes
-Wiki:
-Quantifies the morphology (structural features) of three related species of iris flowers
-Multivariate data set - more than 2 variables per observation
-Linear Discriminant Analysis / Fisher's Linear Discriminant - a linear combination that characterises/separates two or more classes of objects.
--
+
 Try working through this tutorial to explore dataset: https://machinelearningmastery.com/machine-learning-in-python-step-by-step/
 A machine learning project may not be linear, but it has a number of well known steps:
 1. Define Problem.
