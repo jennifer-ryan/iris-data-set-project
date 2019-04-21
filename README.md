@@ -1,9 +1,23 @@
 # Iris Dataset Project 2019
 This repository contains an explanation and exploration of the famous Iris Dataset as part of the assessment in the  Programming and Scripting module for the Higher Diploma on Data Analytics with Galway-Mayo Institute of Technology.
  
+## About this Repository
+The repository is made up of the following:
+* This **README** file that contains a description of the Iris Dataset, exploratory data analysis using statistics and visualisation, and a basic illustration of how the dataset can be used in Machine Learning.
+* Two **Jupyter Notebooks** created using *Python*: 
+    * **Exploratory Data Analysis** uses the *pandas* library for statistical investigations and *matplotlib* and *seaborn* for data visualisation.
+    * **Machine Learning** that interprets the dataset as *numpy* arrays and builds a basic model using *sklearn*, specifically the *K-Nearest Neighbor* algorithm. 
+* **Images** folder that contains .png files of some of the data visualisation performed in the Exploratory Data Analysis notebook that are embedded to the README 
+
+## Contents
+/1. The Dataset
+    1.1 
+/2. Exploratory Data Analysis
+/3. Machine Learning
+    3.? K-Nearest Neighbor
 
 ## The Dataset
-The Iris Dataset (ID) examines certain features of three different species of iris flower: setosa, versicolor and virginica. These features are length and width measurements in centimetres of each iris' petals and sepals.
+The Iris Dataset examines certain features of three different species of iris flower: setosa, versicolor and virginica. These features are length and width measurements in centimetres of each iris' petals and sepals.
 
 ![Iris Species](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Machine+Learning+R/iris-machinelearning.png)
 
@@ -68,12 +82,25 @@ While iris versicolor and virginica are not as distinct from one another, the pa
 ## Correlations
 Correlation figures demonstrate that petal length and petal width are both highly correlated with sepal length
 Petal length and width are very highly correlated
-However, sepal length and width have a small negative correlation.
+However, sepal length and width have a small negative correlation, suggesting that sepal length and width can be vastly different.
 
 
 ## Machine Learning
 A machine learning program learns from previous examples - supervised learning.
 The patterns identified in the iris dataset can be used to create a predictive algorithm to determine the species of iris flower based on sepal and petal measurements.
+
+There are several algorithms available in the sklearn library that can be used to build a machine learning model for the ID including:
+- Logistic Regression
+- Linear Discriminant Analysis
+- K-Nearest Neighbors
+- Classification and Regression Trees 
+- Gaussian Naive Baynes
+- Support Vector Models
+These models are tested with the iris dataset here: https://machinelearningmastery.com/machine-learning-in-python-step-by-step/
+here: https://www.kaggle.com/kamrankausar/iris-dataset-ml-and-deep-learning-from-scratch
+and here: https://medium.com/codebagng/basic-analysis-of-the-iris-data-set-using-python-2995618a6342
+
+For the purposes of the current investigation, I will be using a K-Nearest Neighbors model to illustrate how one may go about constructing a machine learning model.
 
 https://www.youtube.com/watch?v=cKxRvEZd3Mw
 The steps to machine learning are:
@@ -84,11 +111,12 @@ Iris measurements = features
 
 For machine learning, one must split the dataset into training data and test data
 Swain et al (2012) used 75 for training and 75 for testing
-https://www.kaggle.com/sharmajayesh76/iris-data-train-test-split also halves the data
-https://machinelearningmastery.com/machine-learning-in-python-step-by-step/ 80% training, 20% testing
-https://python-guide-kr.readthedocs.io/ko/latest/scenarios/ml.html 140 for training, 10 for testing
-https://www.kaggle.com/kamrankausar/iris-dataset-ml-and-deep-learning-from-scratch 70% training, 30% testing
-
+xxx https://www.kaggle.com/sharmajayesh76/iris-data-train-test-split also halves the data
+xxx https://machinelearningmastery.com/machine-learning-in-python-step-by-step/ 80% training, 20% testing
+xxx https://python-guide-kr.readthedocs.io/ko/latest/scenarios/ml.html 140 for training, 10 for testing (90%, 10%)
+xxx https://www.kaggle.com/kamrankausar/iris-dataset-ml-and-deep-learning-from-scratch 70% training, 30% testing
+xxx https://medium.com/codebagng/basic-analysis-of-the-iris-data-set-using-python-2995618a6342 80% training, 20% testing
+https://github.com/justmarkham/scikit-learn-videos/blob/master/04_model_training.ipynb
 
 
 Not sure if I should go into the Machine Learning side of things
@@ -103,12 +131,18 @@ KNN can be used for classification prediction models. A model can be built by kN
 
 and, when presented with new data, uses Euclidean Distance to measure the distance between the new data points and k number of established data points.(can be adjusted based on the size of the dataset)  If the majority of data point nearest the new data point match a particular species, the model will ascertain that the new measurements presented belong to a particular species.
 
+There is no ideal value for k that would make the model most accurate. It is advisable to try different values for k to see what returns the most accurate predictions.
+https://discuss.analyticsvidhya.com/t/how-to-choose-the-value-of-k-in-knn-algorithm/2606/13
+
+In the table below, I have tested 10 different k values 10 different times and chose the k value of 13 based on the mean accuracy percentage.
+![Choosing the k value](Images/k_values.PNG)
+
 
 The image below demonstrates KNN classification that checks two different instances. In the first instance (K = 3) the model would checks the 3 nearest neighbours and determine that the new data point belongs to Class B. However, if the KNN is expanded (K = 7), allowing the model to check the 7 nearest neighbours, the new datapoint is likely to belong to Class A.
-![KNN Classification](https://www.google.com/imgres?imgurl=http%3A%2F%2Fres.cloudinary.com%2Fdyd911kmh%2Fimage%2Fupload%2Ff_auto%2Cq_auto%3Abest%2Fv1531424125%2FKNN_final_a1mrv9.png&imgrefurl=https%3A%2F%2Fwww.datacamp.com%2Fcommunity%2Ftutorials%2Fk-nearest-neighbor-classification-scikit-learn&docid=ZsAjco8aYYmqIM&tbnid=i8JXNdG2sVa9FM%3A&vet=10ahUKEwjRu8i-79_hAhWsVRUIHeF0B20QMwhJKAkwCQ..i&w=405&h=346&safe=off&bih=722&biw=1536&q=knn%20example&ved=0ahUKEwjRu8i-79_hAhWsVRUIHeF0B20QMwhJKAkwCQ&iact=mrc&uact=8)
+![KNN Classification](http://res.cloudinary.com/dyd911kmh/image/upload/f_auto,q_auto:best/v1531424125/Knn_k1_z96jba.png)
 
-kNN is useful as an introduction to machine learning models but it does not actually create a model that is trained to interpret data. It runs through the dataset for each and every prediction meaning it consumes a lot of time and space. https://stackoverflow.com/questions/10814731/knn-training-testing-and-validation
-Go here to incorporate the xtrain/test to the knn https://machinelearningmastery.com/machine-learning-in-python-step-by-step/ 
+kNN is useful as an introduction to machine learning models but it does not strictly speaking actually create a model that is trained to interpret data. It runs through the dataset for each and every prediction meaning it consumes a lot of time and space. https://stackoverflow.com/questions/10814731/knn-training-testing-and-validation
+
 
 ## Exploring the Data
 Python Libraries
@@ -136,7 +170,7 @@ Wiki:
 Quantifies the morphology (structural features) of three related species of iris flowers
 Multivariate data set - more than 2 variables per observation
 Linear Discriminant Analysis / Fisher's Linear Discriminant - a linear combination that characterises/separates two or more classes of objects.
-
+-
 Try working through this tutorial to explore dataset: https://machinelearningmastery.com/machine-learning-in-python-step-by-step/
 A machine learning project may not be linear, but it has a number of well known steps:
 1. Define Problem.
