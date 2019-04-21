@@ -3,11 +3,15 @@ This repository contains an explanation and exploration of the famous Iris Datas
  
 
 ## The Dataset
-The Iris Dataset (ID) is comprised of the petal and sepal measurements (length and width) of three different species of iris flower, setosa, versicolor and virginica. 
+The Iris Dataset (ID) examines certain features of three different species of iris flower: setosa, versicolor and virginica. These features are length and width measurements in centimetres of each iris' petals and sepals.
 
 ![Iris Species](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Machine+Learning+R/iris-machinelearning.png)
 
-The data was collected by Edgar Anderson and used by biologist and statistician Ronald Fisher in his 1936 paper *The Use of Multiple Measurements in Taxonomic Problems* to demonstrate how statistics can be used for classification.
+The data was collected by Edgar Anderson and popularised when it was used by biologist and statistician Ronald Fisher in his 1936 paper *The Use of Multiple Measurements in Taxonomic Problems* to demonstrate how statistics can be used for classification. He argues that in this dataset the species of iris could be determined based solely on sepal and petal measurements - a method that would become known as linear discriminant analysis.
+
+
+https://www.youtube.com/watch?v=hd1W4CyPX58&t=187s
+It is a supervised learning problem as we are presented with both input (iris measurements) and output (iris species) pairs. The information from these pairings should ideally allow us to accurately predict a species of iris when presented with new data inputs. The iris dataset has become popular in machine learning teaching due to the strong link between species and measurements, particularly in the case of iris setosa.
 
 Slight discrepancies have been noted in some electronic versions of the dataset (Bezdek et al, 1999) with slight variations observed in some of the measurements when compared to the original dataset that was published in 1936.
  
@@ -29,6 +33,7 @@ Exploratory Data Analysis allows us to better understand the data through statis
 ## Averages
 Simply observing the averages of each measurement by species seems to demonstrate significant differences between the species. For instance, setosa has the smallest sepal length, petal length and petal width measurements and yet the largest sepal widths.
 None of the species individual averages are close to the overall average for all species.
+The difference between species seems much more pronounced for petal measurements than sepal measurements 
 
 ## Standard Deviation
 How close measurements are the to average - how wide is the bell curve? Is there even a bell curve? Is the data normally distributed?
@@ -38,6 +43,10 @@ How close measurements are the to average - how wide is the bell curve? Is there
 Data visualisation helps us to identify interesting aspects of the data in a more clean and efficient manner than just looking at numbers.
 
 Univariate plots help us to understand each individual attribute (e.g. histograms, box plots while multivariate allows us to visualise the relationships between the attributes (e.g. scatter plots). https://machinelearningmastery.com/machine-learning-in-python-step-by-step/
+
+## Pairplots
+A look at the pairplot below shows that iris setosa (shown in blue) appears visually to be quite separate from the other two species. While there is quite a bit of observable overlap between versicolor and virginica, particularly in terms of setosa measurements, setosa appears to the significantly distinct.
+![Pairplot](Images/pairplot.PNG) 
 
 ### Scatterplots
 The scatterplots show how sepal and petal lengths and widths relate to one another. 
@@ -63,7 +72,15 @@ However, sepal length and width have a small negative correlation.
 
 
 ## Machine Learning
+A machine learning program learns from previous examples - supervised learning.
 The patterns identified in the iris dataset can be used to create a predictive algorithm to determine the species of iris flower based on sepal and petal measurements.
+
+https://www.youtube.com/watch?v=cKxRvEZd3Mw
+The steps to machine learning are:
+1. Collect training data
+2. Train the classifier
+3. Make predictions
+Iris measurements = features
 
 For machine learning, one must split the dataset into training data and test data
 Swain et al (2012) used 75 for training and 75 for testing
@@ -81,6 +98,17 @@ More complex https://www.kaggle.com/sharmajayesh76/iris-data-train-test-split
 https://www.ritchieng.com/machine-learning-iris-dataset/
 https://www.kaggle.com/kamrankausar/iris-dataset-ml-and-deep-learning-from-scratch
 
+## K Nearest Neighbor (kNN) 
+KNN can be used for classification prediction models. A model can be built by kNN using a dataset that contains input features and output labels
+
+and, when presented with new data, uses Euclidean Distance to measure the distance between the new data points and k number of established data points.(can be adjusted based on the size of the dataset)  If the majority of data point nearest the new data point match a particular species, the model will ascertain that the new measurements presented belong to a particular species.
+
+
+The image below demonstrates KNN classification that checks two different instances. In the first instance (K = 3) the model would checks the 3 nearest neighbours and determine that the new data point belongs to Class B. However, if the KNN is expanded (K = 7), allowing the model to check the 7 nearest neighbours, the new datapoint is likely to belong to Class A.
+![KNN Classification](https://www.google.com/imgres?imgurl=http%3A%2F%2Fres.cloudinary.com%2Fdyd911kmh%2Fimage%2Fupload%2Ff_auto%2Cq_auto%3Abest%2Fv1531424125%2FKNN_final_a1mrv9.png&imgrefurl=https%3A%2F%2Fwww.datacamp.com%2Fcommunity%2Ftutorials%2Fk-nearest-neighbor-classification-scikit-learn&docid=ZsAjco8aYYmqIM&tbnid=i8JXNdG2sVa9FM%3A&vet=10ahUKEwjRu8i-79_hAhWsVRUIHeF0B20QMwhJKAkwCQ..i&w=405&h=346&safe=off&bih=722&biw=1536&q=knn%20example&ved=0ahUKEwjRu8i-79_hAhWsVRUIHeF0B20QMwhJKAkwCQ&iact=mrc&uact=8)
+
+kNN is useful as an introduction to machine learning models but it does not actually create a model that is trained to interpret data. It runs through the dataset for each and every prediction meaning it consumes a lot of time and space. https://stackoverflow.com/questions/10814731/knn-training-testing-and-validation
+Go here to incorporate the xtrain/test to the knn https://machinelearningmastery.com/machine-learning-in-python-step-by-step/ 
 
 ## Exploring the Data
 Python Libraries
@@ -96,9 +124,11 @@ Jupyter Notebook - for clean image output
 While pandas was used to describe and explore the dataset, it needs to be expressed as a numpy array in order to demonstrate a machine learning algorithm.
 
 ## References
-Bezdek, J. C., Keller, J. M., Krishnapuram, R., Kuncheva, L. I., & Pal, N. R.       (1999). *Correspondence: Will the Real Iris Data Please Stand Up?*. IEEE        Transactions on Fuzzy Systems, 7: 3, June 1999.
+Bezdek, J. C., Keller, J. M., Krishnapuram, R., Kuncheva, L. I., & Pal, N. R.       (1999) *Correspondence: Will the Real Iris Data Please Stand Up?*. IEEE        Transactions on Fuzzy Systems, 7: 3, June 1999.
 
-Swain, M., Dash, S. K., Dash, S., & Mohapatra, A. (2012). *An Approach for Iris     Plant Classification Using Neural Network*. International Journal on Soft       Computing, 3: 1, February 2012. 
+Fisher, R. A. (1936) *The Use of Multiple Measurements in Taxonomic Problems.*      Annals of Eugenics, 7.2. 
+
+Swain, M., Dash, S. K., Dash, S., & Mohapatra, A. (2012) *An Approach for Iris     Plant Classification Using Neural Network*. International Journal on Soft       Computing, 3: 1, February 2012. 
 
 
 # Notes
