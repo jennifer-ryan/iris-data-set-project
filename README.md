@@ -2,46 +2,53 @@
 This repository contains an explanation and exploration of the famous Iris Dataset as part of the assessment in the  Programming and Scripting module for the Higher Diploma on Data Analytics with Galway-Mayo Institute of Technology.
  
 ## About this Repository
-The repository is made up of the following:
-* This **README** file that contains a description of the Iris Dataset, exploratory data analysis using statistics and visualisation, and a basic illustration of how the dataset can be used in Machine Learning.
-* The **iris.csv** file which contains the completed dataset downloaded from [here](https://gist.github.com/curran/a08a1080b88344b0c8a7#file-iris-csv-L1).
-* Two **Jupyter Notebooks** created using *Python*: 
+The repository is made up of the following files and folders:
+* This **README** file that contains a description of the Iris Dataset, exploratory data analysis using statistics and visualisation, and a basic illustration of how the dataset can be used in machine learning.
+* The **iris.csv** file which contains the complete dataset downloaded from [here](https://gist.github.com/curran/a08a1080b88344b0c8a7#file-iris-csv-L1). Note that there have been slight discrepancies observed in some electronic versions of the dataset with small variations observed when compared to the original dataset that was published in 1936 (Bezdek et al, 1999) but these differences are not substantial enough to have any major effect on the overall patterns in the dataset.
+* Two **Jupyter Notebooks** created using *Python* libraries: 
     * **Iris Dataset Exploratory Data Analysis** uses the *pandas* library for statistical investigations and *matplotlib* and *seaborn* for data visualisation.
     * **Machine Learning** that interprets the dataset as *numpy* arrays and builds a basic model using *sklearn*, specifically the *K-Nearest Neighbor* algorithm. 
-* **Images** folder that contains .png files of some of the data visualisation performed in the Exploratory Data Analysis notebook that are embedded in the README 
+* **Images** folder that contains .png files of some of the data visualisation performed in the Exploratory Data Analysis notebook that are embedded for description purposes in this README. 
 
 ## 1. The Dataset
 The Iris Dataset consists of 50 samples each of three different species of iris flower: *setosa*, *versicolor* and *virginica*. It contains four different centimetre measurements for each sample - sepal length and width and petal length and width - making it a multivariate dataset.
 
 ![Iris Species](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Machine+Learning+R/iris-machinelearning.png)
 
-The data was collected by botanist Edgar Anderson in the Gaspé Peninsula and popularised when it was used by biologist and statistician Ronald Fisher in his 1936 paper *The Use of Multiple Measurements in Taxonomic Problems* to demonstrate how statistics can be used for classification. He argues that, based on the information in this dataset, iris group membership could be determined by sepal and petal attributes alone - a method that would become known as linear discriminant analysis. 
+The data was collected by botanist Edgar Anderson in the Gaspé Peninsula and popularised when it was used by biologist and statistician Ronald Fisher in his 1936 paper *The Use of Multiple Measurements in Taxonomic Problems* to demonstrate how statistics can be used for classification. He argues that, based on some significant attribute differences between the species in this dataset, iris group membership could potentially be determined by sepal and petal measurements alone - a method that would become known as linear discriminant analysis - and that new iris flowers could be classified based on the statistical information gleaned from the dataset. 
 
-It is a 
-
-Slight discrepancies have been noted in some electronic versions of the dataset (Bezdek et al, 1999) with slight variations observed in some of the measurements when compared to the original dataset that was published in 1936.
- 
-
-See what is available in this article: https://link.springer.com/chapter/10.1007/978-3-7908-1883-3_19
-
-Why the iris dataset?
+The Iris Dataset remains a commonly used example as an introduction to pattern recognition and machine learning algorithms for the following reasons:
 * It is a complete, balanced dataset in that there are no null values and each class is equally represented. 
 * Each of the four features (sepal and petal length and width) are measured in the same units (centimetres).
-
-It is often used as an example of machine learning because prediction is easy
+* One iris species (setosa) is linearly separable from the other two. While the other species have some overlap, they are still largely distinguishable from one another in some measurements. Thus, classification is relatively easy and, by extension, the predictive capability of the data is quite strong. 
 
 ## 2. Exploratory Data Analysis
-https://medium.com/@harimittapalli/exploratory-data-analysis-iris-dataset-9920ea439a3e
-Exploratory Data Analysis allows us to better understand the data through statistical and visual techniques in order to form hypotheses
+*To be read in conjunction with Jupyter Notebook entitled **Iris Dataset Exploratory Analysis***
 
-## Averages
+The following resources were used to develop a familiarity with the pandas library and previous exploratory analysis of the dataset:
+https://medium.com/@harimittapalli/exploratory-data-analysis-iris-dataset-9920ea439a3e
+https://www.kaggle.com/lalitharajesh/iris-dataset-exploratory-data-analysis
+https://machinelearningmastery.com/machine-learning-in-python-step-by-step/
+
+Exploratory Data Analysis allows us to better understand the data through statistical and visual techniques in order to form hypotheses and uncover potential patterns. 
+ 
+The first thing to look at is the structure of the dataset
+
+
+## Averages and Standard Deviations
 Simply observing the averages of each measurement by species seems to demonstrate significant differences between the species. For instance, setosa has the smallest sepal length, petal length and petal width measurements and yet the largest sepal widths.
 None of the species individual averages are close to the overall average for all species.
 The difference between species seems much more pronounced for petal measurements than sepal measurements 
 
-## Standard Deviation
+Standard Deviation
 How close measurements are the to average - how wide is the bell curve? Is there even a bell curve? Is the data normally distributed?
 
+
+## Correlations
+Correlation figures demonstrate that petal length and petal width are both highly correlated with sepal length
+Petal length and width are very highly correlated
+However, sepal width is not highly correlated with any other measurement. The smallest correlation is between sepal length and width, suggesting that they can be vastly different. When we were previously looking at averages, we saw that the species setosa has the smallest average measurements in petal length and width and in sepal length and yet had the largest average sepal width. 
+?Look at particular correlations between species to see if setosa is affecting these figures. 
 
 ## Visualising the Data
 Data visualisation helps us to identify interesting aspects of the data in a more clean and efficient manner than just looking at numbers.
@@ -69,14 +76,13 @@ The histograms and scatterplots shown in the pairplot, allow us to se at a glanc
 While iris versicolor and virginica are not as distinct from one another, the pairplots show that they are more separable by petal measurements than sepal measurements. 
 
 
-## Correlations
-Correlation figures demonstrate that petal length and petal width are both highly correlated with sepal length
-Petal length and width are very highly correlated
-However, sepal width is not highly correlated with any other measurement. The smallest correlation is between sepal length and width, suggesting that they can be vastly different. When we were previously looking at averages, we saw that the species setosa has the smallest average measurements in petal length and width and in sepal length and yet had the largest average sepal width. 
-?Look at particular correlations between species to see if setosa is affecting these figures. 
-
 ## 3. Machine Learning
-A machine learning program learns from information provided by previous examples. In the case of the Iris Dataset, this would be supervised learning as we a
+The following resources were used to develop a familiarity with the sklearn library and previous machine learning examples utilising the Iris Dataset: 
+https://github.com/justmarkham/scikit-learn-videos/blob/master/04_model_training.ipynb
+https://www.youtube.com/watch?v=hd1W4CyPX58&t=187s
+
+
+A machine learning program learns from data provided by previous examples. In the case of the Iris Dataset, this would be supervised learning as we a
 The patterns identified in the iris dataset can be used to create a predictive algorithm to determine a species of iris flower based on sepal and petal measurements.
 
 https://www.youtube.com/watch?v=hd1W4CyPX58&t=187s
@@ -133,7 +139,7 @@ In the table below, I have tested 10 different k values 10 different times and c
 
 
 The image below demonstrates KNN classification that checks two different instances. In the first instance (K = 3) the model would checks the 3 nearest neighbours and determine that the new data point belongs to Class B. However, if the KNN is expanded (K = 7), allowing the model to check the 7 nearest neighbours, the new datapoint is likely to belong to Class A.
-![KNN Classification](http://res.cloudinary.com/dyd911kmh/image/upload/f_auto,q_auto:best/v1531424125/Knn_k1_z96jba.png)
+![KNN Classification](https://pbs.twimg.com/media/DmVRIqrXcAAOvtH.jpg)
 
 kNN is useful as an introduction to machine learning models but it does not strictly speaking actually create a model that is trained to interpret data. It runs through the dataset for each and every prediction meaning it consumes a lot of time and space. https://stackoverflow.com/questions/10814731/knn-training-testing-and-validation
 
