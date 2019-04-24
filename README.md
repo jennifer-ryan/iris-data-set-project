@@ -3,12 +3,19 @@ This repository contains an explanation and exploration of the famous Iris Datas
  
 ## About this Repository
 The repository is made up of the following files and folders:
-* This **README** file that contains a description of the Iris Dataset, exploratory data analysis using statistics and visualisation, and a basic illustration of how the dataset can be used in machine learning.
+* A **README** file that contains descriptions of the Iris Dataset, exploratory data analysis using statistics and visualisation, and a very basic illustration of how the dataset can be used in machine learning.
 * The **iris.csv** file which contains the complete dataset downloaded from [here](https://gist.github.com/curran/a08a1080b88344b0c8a7#file-iris-csv-L1). Note that there have been slight discrepancies observed in some electronic versions of the dataset with small variations observed when compared to the original dataset that was published in 1936 (Bezdek et al, 1999) but these differences are not substantial enough to have any major effect on the overall patterns in the dataset.
-* Two **Jupyter Notebooks** created using *Python* libraries: 
+* Two **Jupyter Notebooks** created using Python: 
     * **Iris Dataset Exploratory Data Analysis** uses the *pandas* library for statistical investigations and *matplotlib* and *seaborn* for data visualisation.
     * **Machine Learning** that interprets the dataset as *numpy* arrays and builds a basic model using *sklearn*, specifically the *K-Nearest Neighbor* algorithm. 
 * **Images** folder that contains .png files of some of the data visualisation performed in the Exploratory Data Analysis notebook that are embedded for description purposes in this README. 
+
+## Python Coding Methodology
+As a novice in the Python language, this project challenged me to become familiar with several new libraries and methods to investigate the dataset. For the exploratory portion of the project, I learned the basics of the pandas library (Mester, 2019, Pandas-Docs) as it is an excellent tool for data manipulation and statistics that is relatively easy to learn. 
+
+The machine learning portion of the project uses sklearn which reads the dataset as a numpy array
+
+Rather than presenting the code for this project as a series of .py files, I decided to learn how to use a Jupyter Notebook for code presentation as output is presented in a much 
 
 ## 1. The Dataset
 The Iris Dataset consists of 50 samples each of three different species of iris flower: *setosa*, *versicolor* and *virginica*. It contains four different centimetre measurements for each sample - sepal length and width and petal length and width - making it a multivariate dataset.
@@ -32,7 +39,7 @@ https://machinelearningmastery.com/machine-learning-in-python-step-by-step/
 
 Exploratory Data Analysis allows us to better understand the data through statistical and visual techniques in order to form hypotheses and uncover potential patterns. 
  
-The first thing to look at is the structure of the dataset
+The first thing to look at is the structure of the dataset ()
 
 
 ## Averages and Standard Deviations
@@ -80,6 +87,7 @@ While iris versicolor and virginica are not as distinct from one another, the pa
 The following resources were used to develop a familiarity with the sklearn library and previous machine learning examples utilising the Iris Dataset: 
 https://github.com/justmarkham/scikit-learn-videos/blob/master/04_model_training.ipynb
 https://www.youtube.com/watch?v=hd1W4CyPX58&t=187s
+https://www.youtube.com/watch?v=kzjDUr-7uRw
 
 
 A machine learning program learns from data provided by previous examples. In the case of the Iris Dataset, this would be supervised learning as we a
@@ -158,11 +166,23 @@ Jupyter Notebook - for clean image output
 While pandas was used to describe and explore the dataset, it needs to be expressed as a numpy array in order to demonstrate a machine learning algorithm.
 
 ## References
-Bezdek, J. C., Keller, J. M., Krishnapuram, R., Kuncheva, L. I., & Pal, N. R.       (1999) *Correspondence: Will the Real Iris Data Please Stand Up?*. IEEE        Transactions on Fuzzy Systems, 7: 3, June 1999.
+Bezdek, J. C., Keller, J. M., Krishnapuram, R., Kuncheva, L. I., & Pal, N. R. (1999) *Correspondence: Will the Real Iris Data Please Stand Up?*. IEEE Transactions on Fuzzy Systems, 7: 3, June 1999.
 
-Fisher, R. A. (1936) *The Use of Multiple Measurements in Taxonomic Problems.*      Annals of Eugenics, 7.2. 
+Brownlee, J. (2016) *Your First Machine Learning Project in Python Step-by-Step.* https://machinelearningmastery.com/machine-learning-in-python-step-by-step/
 
-Swain, M., Dash, S. K., Dash, S., & Mohapatra, A. (2012) *An Approach for Iris     Plant Classification Using Neural Network*. International Journal on Soft       Computing, 3: 1, February 2012. 
+Codesbay (2018). *Machine Learning 'Hello World' with Scikit Learn: Chapter 5: Using the Iris Dataset.* YouTube. https://www.youtube.com/watch?v=kzjDUr-7uRw
+
+Fisher, R. A. (1936) *The Use of Multiple Measurements in Taxonomic Problems.* Annals of Eugenics, 7.2. 
+
+Kadam, A. (2017) *Iris Data Analysis*. GitHub Repository https://github.com/ashKadam/IrisDataAnalysis/blob/master/Iris.py
+
+Mittapalli, H. (2018) *Exploratory Data Analysis.* Medium. https://medium.com/@harimittapalli/exploratory-data-analysis-iris-dataset-9920ea439a3e
+
+Rajesh, L. (2018) *Iris Dataset - Exploratory Data Analysis.* Kaggle Notebook. https://www.kaggle.com/lalitharajesh/iris-dataset-exploratory-data-analysis
+
+Sharma, J. (2017) *Iris Data Train_Test_Split.* Kaggle Notebook. https://www.kaggle.com/sharmajayesh76/iris-data-train-test-split
+
+Swain, M., Dash, S. K., Dash, S., & Mohapatra, A. (2012) *An Approach for Iris Plant Classification Using Neural Network*. International Journal on Soft Computing, 3: 1, February 2012. 
 
 
 # Notes
