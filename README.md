@@ -40,7 +40,7 @@ https://machinelearningmastery.com/machine-learning-in-python-step-by-step/
 Exploratory Data Analysis allows us to better understand the data through statistical and visual techniques in order to form hypotheses and uncover potential patterns in the data. 
  
 Generally, the first things to look at when confronted with a new dataset are the structure of the dataset and basic information about its contents (Refs). Pandas allows us to see that the dataset is comprised of 150 rows and 5 columns; 4 of these columns are float datatypes containing the measurements and the last one is an object datatype that contains the species names. There are no null values in the dataset that need to be accounted for in later analysis. We can see that the dataset is well balanced with each species accounting for 50 samples.
-![Iris Dataset Information](Images/iris.info.PNG) ![Iris Species Distribution](Images/iris.species.PNG)
+![Iris Dataset Information](Images/iris.info.PNG)              ![Iris Species Distribution](Images/iris.species.PNG)
 
 
 
