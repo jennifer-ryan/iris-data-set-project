@@ -11,7 +11,7 @@ The repository is made up of the following files and folders:
 * **Images** folder that contains .png files of some of the data visualisation performed in the Exploratory Data Analysis notebook that are embedded for description purposes in this README. 
 
 ## 2. Python Coding Methodology
-As a novice in the Python language, this project challenged me to become familiar with several new libraries that have been widely used to investigate the dataset. For the exploratory portion of the project, I learned the basics of using the pandas library to read datasets ([Mester, 2019](https://data36.com/pandas-tutorial-1-basics-reading-data-files-dataframes-data-selection/), [Pandas-Docs](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html) as it is an excellent tool for data manipulation and statistics that is relatively easy to learn. To create graphs, I used a mixture of matplotlib and seaborn, which was developed based on matplotlib and creates more attractive graphs ([Mendis, 2019](https://www.kdnuggets.com/2019/04/data-visualization-python-matplotlib-seaborn.html)).
+As a novice in the Python language, this project challenged me to become familiar with several new libraries that have been widely used to investigate the dataset. For the exploratory portion of the project, I learned the basics of using the pandas library to read datasets ([Mester, 2019](https://data36.com/pandas-tutorial-1-basics-reading-data-files-dataframes-data-selection/), [Pandas-Docs](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html)) as it is an excellent tool for data manipulation and statistics that is relatively easy to learn. To create graphs, I used a mixture of matplotlib and seaborn, which was developed based on matplotlib and creates more attractive graphs ([Mendis, 2019](https://www.kdnuggets.com/2019/04/data-visualization-python-matplotlib-seaborn.html)).
 
 The machine learning portion of the project uses scikit-learn which is built to interpret a dataset as a numpy array rather than through pandas. Scikit-learn is a very powerful library and is quite complex so for the purposes of this investigation, I attempted to create a very basic illustration of a potential machine learning programming using the K-Nearest Neighbors algorithm. 
 
@@ -45,6 +45,7 @@ Generally, the first things to look at when confronted with a new dataset are th
 
 
 
+
 ## Averages and Standard Deviations
 Simply observing the averages of each measurement by species seems to demonstrate significant differences between the species. For instance, setosa has the smallest sepal length, petal length and petal width measurements and yet the largest sepal widths.
 None of the species individual averages are close to the overall average for all species.
@@ -73,14 +74,15 @@ A look at the pairplot below shows that iris setosa (shown in blue) appears visu
 ### Scatterplots
 The scatterplots show how sepal and petal lengths and widths relate to one another. 
 
+Petal measurements are much more congruent than sepal measurements
+
 The scatterplots show how one species of iris, the Setosa, is almost entirely distinct from the other two species. A straight line could be drawn to separate the sepal and petal measurements of Setosa from those of the other species, and this difference is particularly evident with petal measurements. 
 
 If one sees an iris with short, narrow petals and short but wide sepals, it could be reliably predicted that the particular species is Setosa.  
 
 Versicolor and Virginica are not very distinguishable from one another in terms of sepal measurements but looking at the petal data, Virginica irises seem more likely to have longer, wider petals than Versicolor.
 
-![Petal Measurements by Species](Images/scatter.petal.png)
-![Sepal Measurements by Species](Images/scatter.sepal.png)
+![Petal Measurements by Species](Images/scatter.petal.png) ![Sepal Measurements by Species](Images/scatter.sepal.png)
 
 
 The histograms and scatterplots shown in the pairplot, allow us to se at a glance how separable the setosa data is from the other two iris species across all measurements. 
