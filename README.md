@@ -13,7 +13,7 @@ The repository is made up of the following files and folders:
 ## 2. Python Coding Methodology
 As a novice in the Python language, this project challenged me to become familiar with several new libraries that have been widely used to investigate the dataset. For the exploratory portion of the project, I learned the basics of using the pandas library to read datasets ([Mester, 2019](https://data36.com/pandas-tutorial-1-basics-reading-data-files-dataframes-data-selection/), [Pandas-Docs](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html)) as it is an excellent tool for data manipulation and statistics that is relatively easy to learn. To create graphs, I used a mixture of matplotlib and seaborn, which was developed based on matplotlib and creates more attractive graphs ([Mendis, 2019](https://www.kdnuggets.com/2019/04/data-visualization-python-matplotlib-seaborn.html)).
 
-The machine learning portion of the project uses scikit-learn which is built to interpret a dataset as a numpy array rather than through pandas. Scikit-learn is a very powerful and quite a complex library so I used several resources in an attempt to understand some of its basic functionality ([Codesbay, 2018](https://www.youtube.com/watch?v=hd1W4CyPX58&); [Markham, 2018](https://github.com/justmarkham/scikit-learn-videos/blob/master/04_model_training.ipynb)). For the purposes of this investigation, I attempted to create a very basic illustration of a potential machine learning programming using the K-Nearest Neighbors algorithm, which I found the most accessible to a new user. 
+The machine learning portion of the project uses scikit-learn which is built to interpret a dataset as a numpy array rather than through pandas. Scikit-learn is a very powerful and quite a complex library so I used several resources in an attempt to understand some of its basic functionality ([Codesbay, 2018](https://www.youtube.com/watch?v=hd1W4CyPX58&); [Markham, 2018](https://github.com/justmarkham/scikit-learn-videos/blob/master/04_model_training.ipynb); [Ng, 2019](https://www.ritchieng.com/machine-learning-iris-dataset/#)). For the purposes of this investigation, I attempted to create a very basic illustration of a potential machine learning programming using the K-Nearest Neighbors algorithm, which I found the most accessible to a new user. 
 
 Rather than presenting the code generated for this project as a series of .py files, I decided to learn how to use a Jupyter Notebook for code presentation as output is presented in a much cleaner fashion and is altogether more legible.
 
@@ -36,6 +36,8 @@ The following resources were used to develop a familiarity with the pandas libra
 https://medium.com/@harimittapalli/exploratory-data-analysis-iris-dataset-9920ea439a3e
 https://www.kaggle.com/lalitharajesh/iris-dataset-exploratory-data-analysis
 https://machinelearningmastery.com/machine-learning-in-python-step-by-step/
+https://www.ritchieng.com/machine-learning-iris-dataset/
+https://github.com/ashKadam/IrisDataAnalysis/blob/master/Iris.py
 
 Exploratory Data Analysis allows us to better understand the data through statistical and visual techniques in order to form hypotheses and uncover potential patterns in the data. 
  
@@ -108,17 +110,11 @@ There are several steps in the construction of a supervised machine learning pro
 In this case, I am using a pre-existing dataset and so the data collection step is unnecessary.
 
 ### 5.2 Data Preparation.
-This involves cleaning up the data, such as removing errors and duplicates and dealing with null values (not required with the Iris Dataset), and performing exploratory data analysis, which was completed in the previous section. 
+This involves cleaning up the data, if required - removing errors/duplicates and dealing with null values, which is not necessary with the Iris Dataset - and performing exploratory data analysis, completed in the previous section. 
 
-It also requires the splitting of the data into a training set and a testing set - a portion that will be used to train the model and a smaller portion that will be used to test the resulting model. There is no correct training/testing ratio but generally a [70/30 split] (https://www.researchgate.net/post/Is_there_an_ideal_ratio_between_a_training_set_and_validation_set_Which_trade-off_would_you_suggest) is adopted. Other examples I have come across use a 50/50 split (Swain et al, 2012; Sharma, 2017), 80/20 split (Brownlee, 2016; Ogundowole, 2017)
+It also involves the splitting of the data into a training set and a testing/validation set - a portion that will be used to train the model and a smaller portion that will be used to test the resulting model. There is no correct training/testing ratio but generally a [70/30 split] (https://www.researchgate.net/post/Is_there_an_ideal_ratio_between_a_training_set_and_validation_set_Which_trade-off_would_you_suggest) is adopted. However, this depends on the dataset being used and it is best to test different ratios to see which fits best and yields the most accurate predictions. Previous models with the Iris Dataset have used a 50/50 split ([Sharma, 2017](https://www.kaggle.com/sharmajayesh76/iris-data-train-test-split)), 60/40 split ([Rajesh, 2018](https://www.kaggle.com/lalitharajesh/iris-dataset-exploratory-data-analysis)), 90/10 split ([Reitz, 2016](https://python-guide-kr.readthedocs.io/ko/latest/scenarios/ml.html)), 80/20 split ([Brownlee, 2016](https://machinelearningmastery.com/machine-learning-in-python-step-by-step/); [Ogundowole, 2017](https://medium.com/codebagng/basic-analysis-of-the-iris-data-set-using-python-2995618a6342)) or 70/30 split ([Kausar, 2018](https://www.kaggle.com/kamrankausar/iris-dataset-ml-and-deep-learning-from-scratch)). In this project, I checked both a 70/30 split as it is considered the norm and an 80/20 split as it is used in two of the examples.
 
-For machine learning, one must split the dataset into training data and test data
-Swain et al (2012) used 75 for training and 75 for testing
-xxx https://www.kaggle.com/sharmajayesh76/iris-data-train-test-split also halves the data
-xxx https://machinelearningmastery.com/machine-learning-in-python-step-by-step/ 80% training, 20% testing
-xxx https://python-guide-kr.readthedocs.io/ko/latest/scenarios/ml.html 140 for training, 10 for testing (90%, 10%)
-xxx https://www.kaggle.com/kamrankausar/iris-dataset-ml-and-deep-learning-from-scratch 70% training, 30% testing
-xxx https://medium.com/codebagng/basic-analysis-of-the-iris-data-set-using-python-2995618a6342 80% training, 20% testing
+
 https://github.com/justmarkham/scikit-learn-videos/blob/master/04_model_training.ipynb
 
 
@@ -138,8 +134,7 @@ To create a machine learning program, the dataset is often split so that a certa
 
 This is a nice intro https://python-guide-kr.readthedocs.io/ko/latest/scenarios/ml.html
 More complex https://www.kaggle.com/sharmajayesh76/iris-data-train-test-split
-https://www.ritchieng.com/machine-learning-iris-dataset/
-https://www.kaggle.com/kamrankausar/iris-dataset-ml-and-deep-learning-from-scratch
+
 
 ## K Nearest Neighbor (kNN) 
 https://github.com/justmarkham/scikit-learn-videos/blob/master/04_model_training.ipynb
@@ -152,7 +147,7 @@ There is no ideal value for k that would make the model most accurate. It is adv
 https://discuss.analyticsvidhya.com/t/how-to-choose-the-value-of-k-in-knn-algorithm/2606/13
 
 In the table below, I have tested 10 different k values 10 different times and chose the k value of 13 based on the mean accuracy percentage.
-![Choosing the k value](Images/k_values.PNG)
+![Choosing the K Value](Images/k_values.PNG)
 
 
 The image below demonstrates KNN classification that checks two different instances. In the first instance (K = 3) the model would checks the 3 nearest neighbours and determine that the new data point belongs to Class B. However, if the KNN is expanded (K = 7), allowing the model to check the 7 nearest neighbours, the new datapoint is likely to belong to Class A.
@@ -186,15 +181,18 @@ Mester, T. (2018). Pandas Tutorial Series. [Part 1](https://data36.com/pandas-tu
 
 Mittapalli, H. (2018) *Exploratory Data Analysis.* Medium. https://medium.com/@harimittapalli/exploratory-data-analysis-iris-dataset-9920ea439a3e
 
+Ng, R. (2019) *Iris Dataset.* https://www.ritchieng.com/machine-learning-iris-dataset/#
+
 Ogundowole, O. O. (2017) *Basic Analysis of the Iris Dataset Using Python.* Medium. https://medium.com/codebagng/basic-analysis-of-the-iris-data-set-using-python-2995618a6342
 
 Pandas-Docs (2019) *10 Minutes to Pandas.* https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html
 
 Rajesh, L. (2018) *Iris Dataset - Exploratory Data Analysis.* Kaggle Notebook. https://www.kaggle.com/lalitharajesh/iris-dataset-exploratory-data-analysis
 
+Reitz, K. (2016) *Machine Learning.* https://python-guide-kr.readthedocs.io/ko/latest/scenarios/ml.html
+
 Sharma, J. (2017) *Iris Data Train_Test_Split.* Kaggle Notebook. https://www.kaggle.com/sharmajayesh76/iris-data-train-test-split
 
-Swain, M., Dash, S. K., Dash, S., & Mohapatra, A. (2012) *An Approach for Iris Plant Classification Using Neural Network*. International Journal on Soft Computing, 3: 1, February 2012. 
 
 
 # Notes
