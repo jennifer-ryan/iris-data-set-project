@@ -13,7 +13,7 @@ The repository is made up of the following files and folders:
 ## 2. Python Coding Methodology
 As a novice in the Python language, this project challenged me to become familiar with several new libraries that have been widely used to investigate the dataset. For the exploratory portion of the project, I learned the basics of using the pandas library to read datasets ([Mester, 2019](https://data36.com/pandas-tutorial-1-basics-reading-data-files-dataframes-data-selection/), [Pandas-Docs](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html)) as it is an excellent tool for data manipulation and statistics that is relatively easy to learn. To create graphs, I used a mixture of matplotlib and seaborn, which was developed based on matplotlib and creates more attractive graphs ([Mendis, 2019](https://www.kdnuggets.com/2019/04/data-visualization-python-matplotlib-seaborn.html)).
 
-The machine learning portion of the project uses scikit-learn which is built to interpret a dataset as a numpy array rather than through pandas. Scikit-learn is a very powerful library and is quite complex so for the purposes of this investigation, I attempted to create a very basic illustration of a potential machine learning programming using the K-Nearest Neighbors algorithm. 
+The machine learning portion of the project uses scikit-learn which is built to interpret a dataset as a numpy array rather than through pandas. Scikit-learn is a very powerful and quite a complex library so I used several resources in an attempt to understand some of its basic functionality ([Codesbay, 2018](https://www.youtube.com/watch?v=hd1W4CyPX58&); [Markham, 2018](https://github.com/justmarkham/scikit-learn-videos/blob/master/04_model_training.ipynb)). For the purposes of this investigation, I attempted to create a very basic illustration of a potential machine learning programming using the K-Nearest Neighbors algorithm, which I found the most accessible to a new user. 
 
 Rather than presenting the code generated for this project as a series of .py files, I decided to learn how to use a Jupyter Notebook for code presentation as output is presented in a much cleaner fashion and is altogether more legible.
 
@@ -39,7 +39,7 @@ https://machinelearningmastery.com/machine-learning-in-python-step-by-step/
 
 Exploratory Data Analysis allows us to better understand the data through statistical and visual techniques in order to form hypotheses and uncover potential patterns in the data. 
  
-Generally, the first things to look at when confronted with a new dataset are the structure of the dataset and basic information about its contents (Refs). Pandas allows us to see that the dataset is comprised of 150 rows and 5 columns; 4 of these columns are float datatypes containing the measurements and the last one is an object datatype that contains the species names. There are no null values in the dataset that need to be accounted for in later analysis. We can see that the dataset is well balanced with each species accounting for 50 samples.
+Generally, the first things to look at when confronted with a new dataset are the structure of the dataset and basic information about its contents (Refs). Pandas allows us to see that the dataset is comprised of 150 rows and 5 columns; 4 of these columns are float datatypes containing the petal and sepal measurements and the last one is an object datatype that contains the species names. There are no null values in the dataset that need to be accounted for in later analysis. We can also see that the dataset is well balanced with each species accounting for 50 samples.
 ![Iris Dataset Information](Images/iris.info.PNG)              ![Iris Species Distribution](Images/iris.species.PNG)
 
 
@@ -82,48 +82,35 @@ If one sees an iris with short, narrow petals and short but wide sepals, it coul
 
 Versicolor and Virginica are not very distinguishable from one another in terms of sepal measurements but looking at the petal data, Virginica irises seem more likely to have longer, wider petals than Versicolor.
 
-![Petal Measurements by Species](Images/scatter.petal.png) ![Sepal Measurements by Species](Images/scatter.sepal.png)
+![Petal Measurements by Species](Images/scatter.petal.png) 
 
 
-The histograms and scatterplots shown in the pairplot, allow us to se at a glance how separable the setosa data is from the other two iris species across all measurements. 
+![Sepal Measurements by Species](Images/scatter.sepal.png)
+
+
+The histograms and scatterplots shown in the pairplot, allow us to see at a glance how separable the setosa data is from the other two iris species across all measurements. 
 While iris versicolor and virginica are not as distinct from one another, the pairplots show that they are more separable by petal measurements than sepal measurements. 
 
 
 ## 5. Machine Learning
-The following resources were used to develop a familiarity with the sklearn library and previous machine learning examples utilising the Iris Dataset: 
-https://github.com/justmarkham/scikit-learn-videos/blob/master/04_model_training.ipynb
-https://www.youtube.com/watch?v=hd1W4CyPX58&t=187s
-https://www.youtube.com/watch?v=kzjDUr-7uRw
+The patterns identified in the exploratory data analysis portion of this project demonstrate why the Iris Dataset is a popular choice for machine learning tutorials; the separability of the species makes the building of a predictive model relatively easy. A machine learning program learns from data provided by previous examples. In the case of the Iris Dataset, this is a supervised learning problem as the example provides both input (iris measurements) and output (iris species) pairs ([Markham, 2018](https://www.youtube.com/watch?v=hd1W4CyPX58&)). The information from these pairings should ideally allow us to create a model that can accurately predict a species of iris when presented with new data inputs. 
 
+There are several steps in the construction of a supervised machine learning program that have been outlined well by [Guo (2017)](https://towardsdatascience.com/the-7-steps-of-machine-learning-2877d7e5548e) and which I will address individually below:
+1. Data collection.
+2. Data preparation.
+3. Choose a model.
+4. Train the model.
+5. Evaluate the model.
+6. Parameter tuning
+7. Make predictions.
 
-A machine learning program learns from data provided by previous examples. In the case of the Iris Dataset, this would be supervised learning as we a
-The patterns identified in the iris dataset can be used to create a predictive algorithm to determine a species of iris flower based on sepal and petal measurements.
+### 5.1 Data Collection.
+In this case, I am using a pre-existing dataset and so the data collection step is unnecessary.
 
-https://www.youtube.com/watch?v=hd1W4CyPX58&t=187s
-It is a supervised learning problem as we are presented with both input (iris measurements) and output (iris species) pairs. The information from these pairings should ideally allow us to accurately predict a species of iris when presented with new data inputs. The iris dataset has become popular in machine learning teaching due to the strong link between species and measurements, particularly in the case of iris setosa.
+### 5.2 Data Preparation.
+This involves cleaning up the data, such as removing errors and duplicates and dealing with null values (not required with the Iris Dataset), and performing exploratory data analysis, which was completed in the previous section. 
 
-There are several algorithms available in the sklearn Python library that can be used to build a machine learning model for the Iris Dataset including:
-- Logistic Regression
-- Linear Discriminant Analysis
-- K-Nearest Neighbors
-- Classification and Regression Trees 
-- Gaussian Naive Baynes
-- Support Vector Models
-
-These models have been used and tested for accuracy with the iris dataset several times  https://machinelearningmastery.com/machine-learning-in-python-step-by-step/
-here: https://www.kaggle.com/kamrankausar/iris-dataset-ml-and-deep-learning-from-scratch
-and here: https://medium.com/codebagng/basic-analysis-of-the-iris-data-set-using-python-2995618a6342
-
-For the purposes of the current investigation, I will be using a K-Nearest Neighbors model to illustrate how one may go about constructing a machine learning model.
-
-https://www.youtube.com/watch?v=cKxRvEZd3Mw
-The steps to machine learning are:
-1. Collect training data
-2. Train the classifier
-3. Make predictions
-Iris measurements = features
-
-To create a machine learning program, the dataset is often split so that a certain percentage is used to train the program and the rest is used to test the program. There is no correct training/testing ratio but generally a [70/30 split] (https://www.researchgate.net/post/Is_there_an_ideal_ratio_between_a_training_set_and_validation_set_Which_trade-off_would_you_suggest) is adopted (). Other examples I have come across use a 50/50 split (Swain et al, 2012; Sharma, 2017), 80/20 split (Brownlee, 2016; Ogundowole, 2017)
+It also requires the splitting of the data into a training set and a testing set - a portion that will be used to train the model and a smaller portion that will be used to test the resulting model. There is no correct training/testing ratio but generally a [70/30 split] (https://www.researchgate.net/post/Is_there_an_ideal_ratio_between_a_training_set_and_validation_set_Which_trade-off_would_you_suggest) is adopted. Other examples I have come across use a 50/50 split (Swain et al, 2012; Sharma, 2017), 80/20 split (Brownlee, 2016; Ogundowole, 2017)
 
 For machine learning, one must split the dataset into training data and test data
 Swain et al (2012) used 75 for training and 75 for testing
@@ -135,12 +122,28 @@ xxx https://medium.com/codebagng/basic-analysis-of-the-iris-data-set-using-pytho
 https://github.com/justmarkham/scikit-learn-videos/blob/master/04_model_training.ipynb
 
 
+There are several algorithms available in the sklearn Python library that can be used to build a machine learning model for the Iris Dataset including:
+* Logistic Regression
+* Linear Discriminant Analysis
+* K-Nearest Neighbors
+* Classification and Regression Trees 
+* Gaussian Naive Baynes
+* Support Vector Models
+These models have been used and tested for accuracy with the iris dataset several times ([Brownlee, 2016](https://machinelearningmastery.com/machine-learning-in-python-step-by-step/); [Kauser, 2018](https://www.kaggle.com/kamrankausar/iris-dataset-ml-and-deep-learning-from-scratch); [Ogundowole, 2017](https://medium.com/codebagng/basic-analysis-of-the-iris-data-set-using-python-2995618a6342)) and, because the dataset is such an excellent predictive model, they all rank quite high, between 96%-99%.
+
+For the purposes of the current investigation, I will be using a K-Nearest Neighbors model to illustrate how one may go about constructing a machine learning model.
+
+
+To create a machine learning program, the dataset is often split so that a certain percentage is used to train the program and the rest is used to test the program. 
+
 This is a nice intro https://python-guide-kr.readthedocs.io/ko/latest/scenarios/ml.html
 More complex https://www.kaggle.com/sharmajayesh76/iris-data-train-test-split
 https://www.ritchieng.com/machine-learning-iris-dataset/
 https://www.kaggle.com/kamrankausar/iris-dataset-ml-and-deep-learning-from-scratch
 
 ## K Nearest Neighbor (kNN) 
+https://github.com/justmarkham/scikit-learn-videos/blob/master/04_model_training.ipynb
+https://www.kaggle.com/lalitharajesh/iris-dataset-exploratory-data-analysis
 KNN can be used for classification prediction models. A model can be built by kNN using a dataset that contains input features and output labels
 
 and, when presented with new data, uses Euclidean Distance to measure the distance between the new data points and k number of established data points.(can be adjusted based on the size of the dataset)  If the majority of data point nearest the new data point match a particular species, the model will ascertain that the new measurements presented belong to a particular species.
@@ -169,7 +172,13 @@ Codesbay (2018). *Machine Learning 'Hello World' with Scikit Learn: Chapter 5: U
 
 Fisher, R. A. (1936) *The Use of Multiple Measurements in Taxonomic Problems.* Annals of Eugenics, 7.2. 
 
+Guo, Y. (2017) *The 7 Steps of Machine Learning.* Towards Data Science. https://towardsdatascience.com/the-7-steps-of-machine-learning-2877d7e5548e
+
 Kadam, A. (2017) *Iris Data Analysis*. GitHub Repository https://github.com/ashKadam/IrisDataAnalysis/blob/master/Iris.py
+
+Kausar K. (2018) *Iris Dataset ML and Deep Learning from Scratch.* Kaggle Notebook. https://www.kaggle.com/kamrankausar/iris-dataset-ml-and-deep-learning-from-scratch/notebook 
+
+Markham, K. (2018) *Training a MAchine Learning Model with Scikit-Learn - Video 4.* Github Repository. https://github.com/justmarkham/scikit-learn-videos/blob/master/04_model_training.ipynb and paired Youtube Video https://www.youtube.com/watch?v=hd1W4CyPX58&.
 
 Mendis, A. (2019) *Data Visualization in Python: Matplotlib vs Seaborn.* KDnuggets. https://www.kdnuggets.com/2019/04/data-visualization-python-matplotlib-seaborn.html
 
