@@ -15,10 +15,10 @@ y = iris.target
 k = 3
 
 while k < 23:
-    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.3)
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.2)
     knn = knc(n_neighbors = k)
     knn.fit(x_train, y_train)
     test_prediction = knn.predict(x_test)
     accuracy = metrics.accuracy_score(y_test, test_prediction)
-    print(k, '=', accuracy)
+    print(accuracy)
     k += 2
