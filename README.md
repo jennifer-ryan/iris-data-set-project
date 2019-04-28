@@ -204,7 +204,7 @@ As mentioned previously, I planned to check two different ratios when splitting 
 In both *test_size* cases, even though accuracy is generally high across the board (>93%), a *k* value of 13 yields the most accurate average percentage of over 97%. The difference between a *test_size* of 20% and 30% appears neglibible with only 0.2% difference in the average accuracy percentage. It was thus decided that for the current investigation, the data would be split into an 80/20 training/testing ratio and the *k* value would be 13.
 
 
-## 5.7 Make Predictions
+### 5.7 Make Predictions
 The KNN model can be further tested by passing new data through it. For this, I created a numpy array of 6 hypothetical iris measurements. The first 3 are the mean values and the last 3 are the maximum values of setosa, versicolor and virginica respectively. The KNN model correctly identified 5 out of 6 species, mistaking the 5th versicolor measurement as a virginica. As this was the maximum values of a versicolor and the previous exploratory data analysis identified some overlap between these species (larger versicolor petal measurements align well with smaller virginica petal measurements and sepal measurements are very clustered across both species), it is understandable that there would be errors in distinguishing these flowers. A look at the scatter plots below shows the overlap for versicolor and virginica species:
 
 ![Scatter Plots](Images/scatter.PNG)
