@@ -1,5 +1,5 @@
 # Iris Dataset Project 2019
-This repository contains an explanation and exploration of the famous Iris Dataset as part of the assessment in the  Programming and Scripting module for the Higher Diploma in Data Analytics with Galway-Mayo Institute of Technology.
+This repository contains an exploration of the famous Iris Dataset as part of the assessment in the  Programming and Scripting module for the Higher Diploma in Data Analytics with Galway-Mayo Institute of Technology.
 
 
 ## 1. About this Repository
