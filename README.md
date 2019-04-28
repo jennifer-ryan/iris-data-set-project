@@ -105,8 +105,8 @@ First I look at the same overall descriptions as in section 4.1, but this time s
 
 Observing each measurement by species again demonstrates significant differences between them:
 * Setosa has the smallest average sepal length, petal length and petal width and yet the largest average sepal width.
-* Minimum sepal width values appear fairly aligned across species but the setosa has the largest range at 2.1cm versus 1.4cm for versicolor and 1.6cm for virginica. However, taking a look back at the swarm plot in section 4.2 shows that the minimum sepal width value of setosa is an outlier and the minimum sepal width is generally closer to 3cm. This may account for the previously observed weak correlations between sepal width and every other measurement (section 4.3) as setosa seems to buck the trend by being smallest in all measurements except for sepal width. 
-* Interestingly, setosa petals are so much smaller than those of the other two species that its maximum petal measurements are still significantly smaller than the minimum petal measurements of either other species, suggesting a very large difference between setosa and the other two flower species in terms of petal size.
+* Minimum sepal width values appear fairly aligned across species but the setosa has the largest range at 2.1cm versus 1.4cm for versicolor and 1.6cm for virginica. However, taking a look back at the swarm plot in section 4.2 shows that the minimum sepal width value of setosa is an outlier and the minimum value is generally closer to 3cm. This may account for the previously observed weak correlations between sepal width and every other measurement (section 4.3) as setosa seems to buck the trend by being smallest in all measurements except for sepal width. 
+* Interestingly, setosa petals are so much smaller than those of the other two species that its maximum petal measurements are still significantly smaller than the minimum petal measurements of either versicolor or virginica, suggesting a very large difference between setosa and the other two flower species in terms of petal size.
 * Virginica is on average larger than versicolor in all measurements, indicating that it is generally a bigger flower.
 * Looking at the minimum and maximum sepal measurements of versicolor and virginica shows they are quite closely aligned indicating considerable overlap in these values. Differences are more pronounced with petal measurements but there remains some amount of overlap which demonstrates that these species cannot be linearly separated. 
 * Overall the differences between species again seems much more pronounced for petal measurements than sepal measurements. 
@@ -269,6 +269,8 @@ Xu, C., Brown, S. M. & Grant, C. (2018) *Detecting Simpson'd Paradox.* The Thirt
 
 
 ### 7.1 Further Links Used:
+
+iris.csv file: https://gist.github.com/curran/a08a1080b88344b0c8a7#file-iris-csv-L1
 
 Iris flowers: https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Machine+Learning+R/iris-machinelearning.png
 
